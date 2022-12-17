@@ -11,6 +11,8 @@
 # (10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs human) game.
 
 
+from game import Game 
 
-
+my_game = Game()
+my_game.run_game()
 

@@ -1,8 +1,18 @@
+import random 
+
 
 class Player: 
-    def __init__(self, gesture) -> None:
-        self.gesture = gesture['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+    def __init__(self, name) -> None:
+        self.name = name
+        self.gestures = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+        self.win = 0
+        self.chosen_gesture = ""
         pass
 
+    def chosen_gesture(self):
+        print("You have chosen: ")
+
+
+player_one = Player("Michaela",  )
 
 
