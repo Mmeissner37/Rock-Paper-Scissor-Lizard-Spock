@@ -13,6 +13,3 @@ class Player:
         print("You have chosen: ")
 
 
-player_one = Player("Michaela",  )
-
-
