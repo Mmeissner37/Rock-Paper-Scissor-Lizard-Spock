@@ -12,3 +12,5 @@ class AI(Player):
         print(f'{self.name} has picked {self.chosen_gesture}')
 
 
+
+
