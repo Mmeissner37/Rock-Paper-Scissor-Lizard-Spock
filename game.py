@@ -56,24 +56,35 @@ class Game:
         print('Type 4 for Spock')
         print("")
         self.player_one.choose_gesture()
+        self.player_two.choose_gesture()
         if self.player_one.chosen_gesture == "0" and (self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard"): 
             self.player_one.win = self.player_one.win + 1 
-        # elif self.player_one.chosen_gesture == self.player_one.chosen_gesture("1") and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Lizard"):
-        #     self.player_one.win = self.player_one.win + 1
-        # elif self.player_one.chosen_gesture == self.player_one.chosen_gesture("2") and (self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Lizard"):
-        #     self.player_one.win = self.player_one.win + 1
-        # elif self.player_one.chosen_gesture == self.player_one.chosen_gesture("3") and (self.player_two.chosen_gesture == "Spock" or self.player_two.chosen_gesture == "Paper"):
-        #     self.player_one.win = self.player_one.win + 1 
-        # elif self.player_one.chosen_gesture == self.player_one.chosen_gesture("4") and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Scissors"):
-        #     self.player_one.win = self.player_one.win + 1
-        self.player_two.choose_gesture()
+        elif self.player_one.chosen_gesture == "1" and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Lizard"):
+            self.player_one.win = self.player_one.win + 1
+        elif self.player_one.chosen_gesture == "2" and (self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Lizard"):
+            self.player_one.win = self.player_one.win + 1
+        elif self.player_one.chosen_gesture == "3" and (self.player_two.chosen_gesture == "Spock" or self.player_two.chosen_gesture == "Paper"):
+            self.player_one.win = self.player_one.win + 1 
+        elif self.player_one.chosen_gesture == "4" and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Scissors"):
+            self.player_one.win = self.player_one.win + 1
+        if self.player_two.chosen_gesture == "0" and (self.player_one.chosen_gesture == "Scissors" or self.player_one.chosen_gesture == "Lizard"): 
+            self.player_two.win = self.player_two.win + 1 
+        elif self.player_two.chosen_gesture == "1" and (self.player_one.chosen_gesture == "Rock" or self.player_one.chosen_gesture == "Lizard"):
+            self.player_one.win = self.player_two.win + 1
+        elif self.player_two.chosen_gesture == "2" and (self.player_one.chosen_gesture == "Paper" or self.player_one.chosen_gesture == "Lizard"):
+            self.player_two.win = self.player_two.win + 1
+        elif self.player_two.chosen_gesture == "3" and (self.player_one.chosen_gesture == "Spock" or self.player_one.chosen_gesture == "Paper"):
+            self.player_two.win = self.player_two.win + 1 
+        elif self.player_two.chosen_gesture == "4" and (self.player_one.chosen_gesture == "Rock" or self.player_one.chosen_gesture == "Scissors"):
+            self.player_two.win = self.player_two.win + 1
         pass
  
 
     def determine_winner(self):
-        while self.player_one.win or self.player_two.win < 2: 
+        if self.player_one.win or self.player_two.win < 2: 
             self.play_hands()
-            pass
+        elif self.player_one.win or self.player_two.win == 2:
+            self.show_win()
 
 
     def show_win(self):
@@ -82,6 +93,8 @@ class Game:
         if self.player_two.win == 2: 
             print(f'{self.player_two.name} wins!')
         pass
+        print("")
+
 
     def play_again(self):
         print('Would you like to play again? Yes or No')
