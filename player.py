@@ -12,3 +12,7 @@ class Player:
     def choose_gesture(self):
         pass
 
+    def gestures(self):
+        self.gestures = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
+
+

@@ -7,7 +7,7 @@ from ai import AI
 
 class Game:
     def __init__(self) -> None:
-        self.player_one = Human("")    
+        self.player_one = None    
         self.player_two = None          #None is a placeholder that I override in choose_game_mode
         pass
 
@@ -17,6 +17,7 @@ class Game:
         self.play_hands()
         self.determine_winner()
         self.show_win()
+        self.play_again()
 
     def display_rules(self):
         print("Here are the Rules of the Game:")
@@ -53,8 +54,9 @@ class Game:
         print('Type 2 for Scissors')
         print('Type 3 for Lizard')
         print('Type 4 for Spock')
+        print("")
         self.player_one.choose_gesture()
-        if self.player_one.chosen_gesture == self.player_one.chosen_gesture("0") and (self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard"): 
+        if self.player_one.chosen_gesture == "0" and (self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard"): 
             self.player_one.win = self.player_one.win + 1 
         # elif self.player_one.chosen_gesture == self.player_one.chosen_gesture("1") and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Lizard"):
         #     self.player_one.win = self.player_one.win + 1
@@ -65,17 +67,7 @@ class Game:
         # elif self.player_one.chosen_gesture == self.player_one.chosen_gesture("4") and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Scissors"):
         #     self.player_one.win = self.player_one.win + 1
         self.player_two.choose_gesture()
-        # if self.player_two.chosen_gesture == self.player_two.chosen_gesture(0) and (self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard"):
-        #     self.player_two.win = self.player_two.win +1 
-        # elif self.player_two.chosen_gesture == self.player_two.chosen_gesture(1) and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Spock"):
-        #     self.player_two.win = self.player_two.win +1 
-        # elif self.player_two.chosen_gesture == self.player_two.chosen_gesture(2) and (self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Lizard"):
-        #     self.player_two.win = self.player_two.win +1 
-        # elif self.player_two.chosen_gesture == self.player_two.chosen_gesture(3) and (self.player_two.chosen_gesture == "Spock" or self.player_two.chosen_gesture == "Paper"):
-        #     self.player_two.win = self.player_two.win +1 
-        # elif self.player_two.chosen_gesture == self.player_two.chosen_gesture(4) and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Scissors"):
-        #     self.player_two.win = self.player_two.win +1 
-        # pass
+        pass
  
 
     def determine_winner(self):
@@ -90,4 +82,13 @@ class Game:
         if self.player_two.win == 2: 
             print(f'{self.player_two.name} wins!')
         pass
+
+    def play_again(self):
+        print('Would you like to play again? Yes or No')
+        user_input = input("")
+        if user_input == "Yes":
+            self.choose_game_mode()
+        if user_input == "No":
+            print('Thanks for playing!')
+
 
