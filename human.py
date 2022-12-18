@@ -7,17 +7,21 @@ class Human(Player):
 
     def choose_gesture(self):
         self.chosen_gesture = input("Please chose your hand: ")
-        if input == "0":
+        if self.chosen_gesture == "0":
             self.chosen_gesture = "Rock"
-        if input == "1":
+        if self.chosen_gesture == "1":
             self.chosen_gesture = "Paper"
-        if input == "2":
+        if self.chosen_gesture == "2":
             self.chosen_gesture = "Scissors"
-        if input == "3":
+        if self.chosen_gesture == "3":
             self.chosen_gesture = "Lizard"
-        if input == "4":
+        if self.chosen_gesture == "4":
             self.chosen_gesture = "Spock"
 
+
+    # def choose_gesture(self):
+    #     self.chosen_gesture = random.choice(self.gestures)
+    #     print(f'{self.name} has picked {self.chosen_gesture}')
 
 
 
