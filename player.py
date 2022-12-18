@@ -9,8 +9,6 @@ class Player:
         self.chosen_gesture = ""
         pass
 
-    def chosen_gesture(self):
-        print("You have chosen: ")
+    def choose_gesture(self):
         pass
-
 

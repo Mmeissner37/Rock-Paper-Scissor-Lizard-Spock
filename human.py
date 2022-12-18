@@ -5,18 +5,19 @@ class Human(Player):
     def __init__(self, name) -> None:
         super().__init__(name) 
 
-    def chosen_gesture(self):
+    def choose_gesture(self):
         self.chosen_gesture = input("Please chose your hand: ")
-        if user_choice == "0":
-            user_choice = "Rock"
-        if user_choice == "1":
-            user_choice = "Paper"
-        if user_choice == "2":
-            user_choice = "Scissors"
-        if user_choice == "3":
-            user_choice = "Lizard"
-        if user_choice == "4":
-            user_choice = "Spock"
+        if input == "0":
+            self.chosen_gesture = "Rock"
+        if input == "1":
+            self.chosen_gesture = "Paper"
+        if input == "2":
+            self.chosen_gesture = "Scissors"
+        if input == "3":
+            self.chosen_gesture = "Lizard"
+        if input == "4":
+            self.chosen_gesture = "Spock"
+
 
 
 
