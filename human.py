@@ -6,7 +6,7 @@ class Human(Player):
         super().__init__(name) 
 
     def chosen_gesture(self):
-        self.chosen_gesture = input("")
+        self.chosen_gesture = input("Please chose your hand: ")
         if user_choice == "0":
             user_choice = "Rock"
         if user_choice == "1":

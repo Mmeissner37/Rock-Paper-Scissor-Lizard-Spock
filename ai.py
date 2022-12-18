@@ -9,8 +9,6 @@ class AI(Player):
     
     def chosen_gesture(self):
         self.chosen_gesture = random.choice(self.gestures)
-        print(self.name, "has picked", self.chosen_gesture)
+        print(f'{self.name} has picked {self.chosen_gesture}')
 
 
-
-print(AI.chosen_gesture)
