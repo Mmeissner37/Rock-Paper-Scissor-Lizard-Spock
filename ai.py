@@ -5,6 +5,7 @@ import random
 class AI(Player): 
     def __init__(self, name) -> None:
         super().__init__(name) 
+        self.win = 0
 
     
     def choose_gesture(self):
