@@ -8,7 +8,7 @@ class Human(Player):
         self.win = 0
 
     def choose_gesture(self):
-        sleep(1)
+        #sleep(1)
         print("Please enter your hand: ")
         self.chosen_gesture = input()
         if self.chosen_gesture == "0":

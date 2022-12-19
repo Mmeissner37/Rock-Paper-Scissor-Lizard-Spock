@@ -75,26 +75,46 @@ class Game:
 
 
     def determine_winner(self):
-        if self.player_one.chosen_gesture == "0" or "Rock" and (self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard"): 
+        if self.player_one.chosen_gesture == "0" and (self.player_two.chosen_gesture == "2" or "Scissors") or (self.player_two.chosen_gesture == "3" or "Lizard"): 
             self.player_one.win = (self.player_one.win + 1)
-        elif self.player_one.chosen_gesture == "1" or "Paper" and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Spock"):
+        elif self.player_one.chosen_gesture == "1" and (self.player_two.chosen_gesture == "0" or "Rock") or (self.player_two.chosen_gesture == "4" or "Spock"):
             self.player_one.win = (self.player_one.win + 1)
-        elif self.player_one.chosen_gesture == "2" or "Scissors" and (self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Lizard"):
+        elif self.player_one.chosen_gesture == "2" and (self.player_two.chosen_gesture == "1" or "Paper") or (self.player_two.chosen_gesture == "3" or "Lizard"):
             self.player_one.win = (self.player_one.win + 1)
-        elif self.player_one.chosen_gesture == "3" or "Lizard" and (self.player_two.chosen_gesture == "Spock" or self.player_two.chosen_gesture == "Paper"):
+        elif self.player_one.chosen_gesture == "3" and (self.player_two.chosen_gesture == "4" or "Spock") or (self.player_two.chosen_gesture == "1" or "Paper"):
             self.player_one.win = (self.player_one.win + 1) 
-        elif self.player_one.chosen_gesture == "4" or "Spock" and (self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Scissors"):
+        elif self.player_one.chosen_gesture == "4" and (self.player_two.chosen_gesture == "0" or "Rock") or (self.player_two.chosen_gesture == "2" or "Scissors"):
             self.player_one.win = (self.player_one.win + 1)
-        if self.player_two.chosen_gesture == "0" or "Rock" and (self.player_one.chosen_gesture == "Scissors" or self.player_one.chosen_gesture == "Lizard"): 
+        elif self.player_one.choose_gesture == "0" and (self.player_two.chosen_gesture == "0" or "Rock"):
+            pass
+        elif self.player_one.choose_gesture == "1" and (self.player_two.chosen_gesture == "1" or "Paper"):
+            pass
+        elif self.player_one.choose_gesture == "2" and (self.player_two.chosen_gesture == "2" or "Scissors"):
+            pass
+        elif self.player_one.choose_gesture == "3" and (self.player_two.chosen_gesture == "3" or "Lizard"):
+            pass
+        elif self.player_one.choose_gesture == "4" and (self.player_two.chosen_gesture == "4" or "Spock"):
+            pass
+        if self.player_two.chosen_gesture == "0" or "Rock" and (self.player_one.chosen_gesture == "2") or (self.player_one.chosen_gesture == "3"): 
             self.player_two.win = (self.player_two.win + 1) 
-        elif self.player_two.chosen_gesture == "1" or "Paper" and (self.player_one.chosen_gesture == "Rock" or self.player_one.chosen_gesture == "Spock"):
-            self.player_one.win = (self.player_two.win + 1)
-        elif self.player_two.chosen_gesture == "2" or "Scissors" and (self.player_one.chosen_gesture == "Paper" or self.player_one.chosen_gesture == "Lizard"):
+        elif self.player_two.chosen_gesture == "1" or "Paper" and (self.player_one.chosen_gesture == "0") or (self.player_one.chosen_gesture == "4"):
             self.player_two.win = (self.player_two.win + 1)
-        elif self.player_two.chosen_gesture == "3" or "Lizard" and (self.player_one.chosen_gesture == "Spock" or self.player_one.chosen_gesture == "Paper"):
+        elif self.player_two.chosen_gesture == "2" or "Scissors" and (self.player_one.chosen_gesture == "1") or (self.player_one.chosen_gesture == "3"):
+            self.player_two.win = (self.player_two.win + 1)
+        elif self.player_two.chosen_gesture == "3" or "Lizard" and (self.player_one.chosen_gesture == "4") or (self.player_one.chosen_gesture == "1"):
             self.player_two.win = (self.player_two.win + 1) 
-        elif self.player_two.chosen_gesture == "4" or "Spock" and (self.player_one.chosen_gesture == "Rock" or self.player_one.chosen_gesture == "Scissors"):
+        elif self.player_two.chosen_gesture == "4" or "Spock" and (self.player_one.chosen_gesture == "0") or (self.player_one.chosen_gesture == "2"):
             self.player_two.win = (self.player_two.win + 1)
+        elif self.player_two.choose_gesture == "0" or "Rock" and (self.player_one.chosen_gesture == "0"):
+            pass
+        elif self.player_two.choose_gesture == "1" or "Paper" and (self.player_one.chosen_gesture == "1"):
+            pass
+        elif self.player_two.choose_gesture == "2" or "Scissors" and (self.player_one.chosen_gesture == "2"):
+            pass
+        elif self.player_two.choose_gesture == "3" or "Lizard" and (self.player_one.chosen_gesture == "3"):
+            pass
+        elif self.player_two.choose_gesture == "4" or "Spock" and (self.player_one.chosen_gesture == "4"):
+            pass
         self.show_win()
  
 
