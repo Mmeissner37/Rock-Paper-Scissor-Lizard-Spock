@@ -1,4 +1,5 @@
 from player import Player 
+from time import sleep 
 
 
 class Human(Player):
@@ -7,6 +8,7 @@ class Human(Player):
         self.win = 0
 
     def choose_gesture(self):
+        sleep(1)
         print("Please enter your hand: ")
         self.chosen_gesture = input()
         if self.chosen_gesture == "0":
