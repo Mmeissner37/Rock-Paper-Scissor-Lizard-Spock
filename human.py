@@ -7,26 +7,22 @@ class Human(Player):
         self.win = 0
 
     def choose_gesture(self):
-        self.chosen_gesture = input("Please enter your hand: ")
-        if input == "0":
-            print("You chose Rock")
-            self.chosen_gesture = Player.gestures(0)
-        if input == "1":
-            print("You chose Paper")
-            self.chosen_gesture = Player.gestures(1)
-        if input == "2":
-            print("You chose Scissors")
-            self.chosen_gesture = Player.gestures(2)
-        if input == "3":
-            print("You chose Lizard")
-            self.chosen_gesture = Player.gestures(3)
-        if input == "4":
-            print("You chose Spock")
-            self.chosen_gesture = Player.gestures(4)
+        print("Please enter your hand: ")
+        self.chosen_gesture = input()
+        if self.chosen_gesture == "0":
+            print(f'{self.name} chose Rock')
+        if self.chosen_gesture == "1":
+            print(f'{self.name} chose Paper')
+        if self.chosen_gesture == "2":
+            print(f'{self.name} chose Scissors')
+        if self.chosen_gesture == "3":
+            print(f'{self.name} chose Lizard')
+        if self.chosen_gesture == "4":
+            print(f'{self.name} chose Spock')
+        elif self.chosen_gesture == "":
+            print('Please chose between 0 and 4')
+
             
-
-
-
 
 
 
