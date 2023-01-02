@@ -13,30 +13,24 @@ class Human(Player):
         self.chosen_gesture = input()
         if self.chosen_gesture == "0":
             print(f'{self.name} chose Rock')
-            self.choose_gesture = "Rock"
+            self.chosen_gesture = "Rock"
         if self.chosen_gesture == "1":
             print(f'{self.name} chose Paper')
-            self.choose_gesture = "Paper"
+            self.chosen_gesture = "Paper"
         if self.chosen_gesture == "2":
             print(f'{self.name} chose Scissors')
-            self.choose_gesture = "Scissors"
+            self.chosen_gesture = "Scissors"
         if self.chosen_gesture == "3":
             print(f'{self.name} chose Lizard')
-            self.choose_gesture = "Lizard"
+            self.chosen_gesture = "Lizard"
         if self.chosen_gesture == "4":
             print(f'{self.name} chose Spock')
-            self.choose_gesture = "Spock"
-        elif self.chosen_gesture == "":
+            self.chosen_gesture = "Spock"
+        elif self.chosen_gesture == ('0', '4'): 
             print('Please chose between 0 and 4')
-            self.choose_gesture = input()
+            self.choose_gesture()
 
             
-
-
-
-    # def choose_gesture(self):
-    #     self.chosen_gesture = random.choice(self.gestures)
-    #     print(f'{self.name} has picked {self.chosen_gesture}')
 
 
 
