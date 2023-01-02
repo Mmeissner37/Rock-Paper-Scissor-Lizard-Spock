@@ -22,6 +22,7 @@ class Game:
         self.play_again()
 
     def display_rules(self):
+        print("")
         print("Welcome to the game! Here are the rules: \n")
         print("Rock crushes Scissors")
         print("Scissors cuts Paper")
@@ -67,60 +68,48 @@ class Game:
         elif self.player_one.chosen_gesture == "Rock": 
             if self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard":
                 self.player_one.win += 1
+                print(f'{self.player_one.name} won this round!')
             elif self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Spock":
                 self.player_two.win += 1
+                print(f'{self.player_two.name} won this round!')
         elif self.player_one.chosen_gesture == "Paper": 
             if self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Spock":
                 self.player_one.win += 1
+                print(f'{self.player_one.name} won this round!')
             elif self.player_two.chosen_gesture == "Scissors" or self.player_two.chosen_gesture == "Lizard":
                 self.player_two.win += 1
+                print(f'{self.player_two.name} won this round!')
         elif self.player_one.chosen_gesture == "Scissors":
             if self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Lizard":
                 self.player_one.win += 1
+                print(f'{self.player_one.name} won this round!')
             elif self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Spock":
                 self.player_two.win += 1
+                print(f'{self.player_two.name} won this round!')
         elif self.player_one.chosen_gesture == "Lizard":
             if self.player_two.chosen_gesture == "Spock" or self.player_two.chosen_gesture == "Paper":
                 self.player_one.win += 1
+                print(f'{self.player_one.name} won this round!')
             elif self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Scissors":
                 self.player_two.win += 1
+                print(f'{self.player_two.name} won this round!')
         elif self.player_one.chosen_gesture == "Spock":
             if self.player_two.chosen_gesture == "Rock" or self.player_two.chosen_gesture == "Scissors":
                 self.player_one.win += 1
+                print(f'{self.player_one.name} won this round!')
             elif self.player_two.chosen_gesture == "Paper" or self.player_two.chosen_gesture == "Lizard":
                 self.player_two.win += 1
+                print(f'{self.player_two.name} won this round!')
         pass        
  
 
     def show_win(self):
-        if self.player_one.win == self.player_two.win:
-            #self.play_hands()
-            #self.determine_winner()
-            pass
-# previous code had above if statements where win == 1 placed here, but the 'blank; won this round printed whenever they had 1 point 
-        if self.player_one.win > self.player_two.win:
-            print(f'{self.player_one.name} won this round!')
-            self.play_hands()
-            self.determine_winner()
-            pass
-        if self.player_two.win > self.player_one.win: 
-            print(f'{self.player_two.name} won this round!')
-            self.play_hands()
-            self.determine_winner()
-            pass
         if self.player_one.win == 2:
             print(f'{self.player_one.name} wins best of 3!')
-            #self.play_again()
             pass
         if self.player_two.win == 2:
             print(f'{self.player_two.name} wins best of 3!')
             pass
-            #self.play_again()
-        else:
-            if self.player_one.win != 2 and self.player_two.win != 2:
-                self.play_hands()
-                self.determine_winner()
-                pass
 
 
     def play_again(self):
